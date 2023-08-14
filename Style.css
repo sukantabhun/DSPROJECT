@@ -9,3 +9,12 @@
 .text-right{
     text-align: right;
 }
+.navbar-brand{
+    color: #22d4f0;
+}
+.nav-item{
+    padding-right: 25px;
+}
+.nav-link{
+    color: black;
+}
