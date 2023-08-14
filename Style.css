@@ -9,11 +9,14 @@
     text-align: right;
 }
 .navbar-brand{
-    color: #22d4f0;
+    color: #f06622;
 }
 .nav-item{
     padding-right: 25px;
 }
 .nav-link{
     color: black;
+}
+.navbar-color{
+    background-color: white;
 }
