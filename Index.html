@@ -21,7 +21,9 @@
             crossorigin="anonymous"></script>
         <link rel="stylesheet" type="text/css" href="Style.css" />
         <script src='Script.js'></script>
-
+    <link rel="stylesheet" href="https://pyscript.net/latest/pyscript.css" />
+    <script defer src="https://pyscript.net/latest/pyscript.js"></script>
+    <py-config> packages = [ "matplotlib", "numpy"] </py-config>
     </head>
 
     <body>
@@ -59,9 +61,31 @@
                 </div>
             </nav>
             
-            <center>
-                <iframe src="untitled.html" height="800" width="'1000" frameborder = '0'></iframe>
-            </center>
+            <div class = 'd-flex flex-row justify-content-center text-center'>
+                <div id="plot" class="mt-5"></div>
+                <py-script output = 'plot'>
+                    from matplotlib import pyplot
+
+                    import matplotlib.pyplot as plt
+
+                    import numpy as np
+                    x = [1,2,3,4,5]
+                    y = [1,4,9,16,25]
+                    fig , ax = plt.subplots()
+                    ax.bar(x,y, width = 0.2  ,align = 'center' ,color = '#f06622')
+                    ax.set_facecolor('black')
+                    fig.set_facecolor('black')
+                    xticks = ax.get_xticks()
+                    ax.set_xticks(xticks)
+                    ax.set_xticklabels(xticks, color='white')
+                    ax.set(xlabel='x-axis',ylabel='y-axis')
+                    yticks = ax.get_yticks()
+                    ax.set_yticks(yticks)
+                    ax.set_yticklabels(yticks, color='white') 
+                    pyscript.write('plot',fig)
+
+                </py-script>
+            </div>
     </body>
 
 </html>
