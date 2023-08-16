@@ -9,7 +9,7 @@
     text-align: right;
 }
 .navbar-brand{
-    color: #f06622;
+    color: #D11111;
 }
 .nav-item{
     padding-right: 25px;
@@ -19,4 +19,25 @@
 }
 .navbar-color{
     background-color: white;
+}
+.btn-color{
+    color: lightslategrey;
+    border-color: lightslategrey;
+    font-weight: bold;
+    padding: 15px;
+    width: 150px;
+    border-width: 2px;
+}
+.graph-design{
+    border-radius: 25px;
+    box-shadow: 5px 5px 15px lightslategrey;
+}
+.card-1{
+    border-radius: 15px;
+}
+.heading{
+    text-align: center;
+    color: lightslategrey;
+    font-family: cursive;
+    font-size: 60px;   
 }

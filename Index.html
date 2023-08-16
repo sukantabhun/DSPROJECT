@@ -28,7 +28,7 @@
 
     <body>
         <div class='background-image'>
-            <nav class="navbar navbar-expand-lg bg-body-tertiary navbar-color">
+            <nav class="navbar navbar-expand-lg bg-body-tertiary navbar-color mb-5">
                 <div class="container-fluid">
                     <a class="navbar-brand">FifaNation</a>
                     <button class="navbar-toggler" type="button"
@@ -60,32 +60,44 @@
                     </div>
                 </div>
             </nav>
-            
+            <canter><h1 class = 'heading'>The All you need Predictor</h1></canter>
             <div class = 'd-flex flex-row justify-content-center text-center'>
-                <div id="plot" class="mt-5"></div>
-                <py-script output = 'plot'>
-                    from matplotlib import pyplot
+                <div class="card-1 bg-black graph-design mt-5">
+                    <div id="plot" class="mt-5 d-none"></div>
+                    <py-script output = 'plot'>
+                        from matplotlib import pyplot
 
-                    import matplotlib.pyplot as plt
+                        import matplotlib.pyplot as plt
 
-                    import numpy as np
-                    x = [1,2,3,4,5]
-                    y = [1,4,9,16,25]
-                    fig , ax = plt.subplots()
-                    ax.bar(x,y, width = 0.2  ,align = 'center' ,color = '#f06622')
-                    ax.set_facecolor('black')
-                    fig.set_facecolor('black')
-                    xticks = ax.get_xticks()
-                    ax.set_xticks(xticks)
-                    ax.set_xticklabels(xticks, color='white')
-                    ax.set(xlabel='x-axis',ylabel='y-axis')
-                    yticks = ax.get_yticks()
-                    ax.set_yticks(yticks)
-                    ax.set_yticklabels(yticks, color='white') 
-                    pyscript.write('plot',fig)
+                        import numpy as np
+                        x = [1,2,3,4,5]
+                        y = [1,4,9,16,25]
+                        fig , ax = plt.subplots()
+                        ax.bar(x,y, width = 0.2  ,align = 'center' ,color = '#D11111')
+                        ax.set_facecolor('black')
+                        fig.set_facecolor('black')
+                        xticks = ax.get_xticks()
+                        ax.set_xticks(xticks)
+                        ax.set_xticklabels(xticks, color='white')
+                        ax.set(xlabel='x-axis',ylabel='y-axis')
+                        yticks = ax.get_yticks()
+                        ax.set_yticks(yticks)
+                        ax.set_yticklabels(yticks, color='white') 
+                        pyscript.write('plot',fig)
 
-                </py-script>
+                    </py-script>
+                </div>
             </div>
+            <center class="mt-5">
+                <button class = 'btn btn-color btn-outline-danger' id="predictBtn" onclick = 'predictToggle()'>Predict</button>
+            </center>
+        </div>
+
+        <div>
+
+
+
+        </div>
     </body>
 
 </html>
