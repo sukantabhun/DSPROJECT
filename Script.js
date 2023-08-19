@@ -1,19 +1,20 @@
 let temp = true;
 let graphEl = document.getElementById('plot');
-let placeHolderEl = document.getElementById('plotPlaceholder');
+let animateEl = document.getElementById('animate');
+let animateTextEl = document.getElementById('animateText');
 graphEl.classList.add('d-none')
 
 
 function predictToggle() {
     let graphEl = document.getElementById('plot');
-    let placeHolderEl = document.getElementById('plotPlaceholder');
-    if (temp === false) {
+    let animateEl = document.getElementById('animate');
+    let animateTextEl = document.getElementById('animateText');
+    if (temp === true) {
         graphEl.classList.remove('d-none');
-        placeHolderEl.classList.add('d-none');
-        temp = true;
-    } else {
-        graphEl.classList.add('d-none');
-        placeHolderEl.classList.remove('d-none');
+        animateEl.classList.add('d-none');
+        animateTextEl.classList.add('d-none');
         temp = false;
+    } else {
+        alert('You clicked on the predict button!');
     }
 }
