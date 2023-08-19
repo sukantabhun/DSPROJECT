@@ -41,3 +41,9 @@
     font-family: cursive;
     font-size: 60px;   
 }
+.place-holder{
+    width: 500px;
+    height: 500px;
+    background-color: black;
+    border-radius: 25px;
+}
