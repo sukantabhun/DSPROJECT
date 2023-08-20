@@ -1,7 +1,14 @@
 @import url('https://fonts.googleapis.com/css2?family=Bree+Serif&family=Caveat:wght@400;700&family=Lobster&family=Monoton&family=Open+Sans:ital,wght@0,400;0,700;1,400;1,700&family=Playfair+Display+SC:ital,wght@0,400;0,700;1,700&family=Playfair+Display:ital,wght@0,400;0,700;1,700&family=Roboto:ital,wght@0,400;0,700;1,400;1,700&family=Source+Sans+Pro:ital,wght@0,400;0,700;1,700&family=Work+Sans:ital,wght@0,400;0,700;1,700&display=swap');
+/* Custom class to add margin between navbar and carousel */
+.margin-top-carousel {
+    margin-top: 20px;
+}
 
-.background-image{
-    background-image: url('./bgImg.jpeg');
+.margin-top-prdict{
+    margin-top: 40px;
+}
+.background-color{
+    background-color: black;
     height: 100vh;
     background-size:cover;
 }
@@ -73,4 +80,28 @@
     color: #3498db; 
     animation: spin 1s linear infinite;
   }
-  
+
+.carousel-control-prev,
+.carousel-control-next {
+    background-color: transparent;
+    border: none;
+}
+.bg-1{
+    background-image: url('https://wallpaperaccess.com/full/3491893.jpg');
+    background-size: cover;
+    width: 100vw;
+    height: 100vh;
+    text-align: center;
+}
+.bg-2{
+    background-image: url('https://img.olympicchannel.com/images/image/private/t_s_w1340/t_s_16_9_g_auto/f_auto/primary/cfhhzir28lrfmr5lgyxk');
+    background-size: cover;
+    width: 100vw;
+    height: 100vh;
+    text-align: center;
+}
+.predictor-bg{
+    background-image: url('./bgImg.jpeg');
+    height: 100vh;
+    background-size:cover;
+}
