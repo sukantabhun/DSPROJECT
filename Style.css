@@ -100,8 +100,21 @@
     height: 100vh;
     text-align: center;
 }
+.bg-3{
+    background-image: url('https://wallpapercave.com/wp/wp3109791.jpg');
+    background-size: cover;
+    height: 100vh;
+    text-align: center;
+    object-fit: cover;
+}
 .predictor-bg{
     background-image: url('./bgImg.jpeg');
     height: 100vh;
     background-size:cover;
+}
+.carousel-inner {
+    height: 50%;
+}
+.container {
+    width: 50px;
 }
