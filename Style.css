@@ -1,9 +1,4 @@
 @import url('https://fonts.googleapis.com/css2?family=Bree+Serif&family=Caveat:wght@400;700&family=Lobster&family=Monoton&family=Open+Sans:ital,wght@0,400;0,700;1,400;1,700&family=Playfair+Display+SC:ital,wght@0,400;0,700;1,700&family=Playfair+Display:ital,wght@0,400;0,700;1,700&family=Roboto:ital,wght@0,400;0,700;1,400;1,700&family=Source+Sans+Pro:ital,wght@0,400;0,700;1,700&family=Work+Sans:ital,wght@0,400;0,700;1,700&display=swap');
-/* Custom class to add margin between navbar and carousel */
-.margin-top-carousel {
-    margin-top: 20px;
-}
-
 .margin-top-prdict{
     margin-top: 40px;
 }
@@ -117,4 +112,44 @@
 }
 .container {
     width: 50px;
+}
+.banner-section-bg-container {
+    background-image: url('./bgImg.jpeg');
+    height: 100vh;
+    background-size: cover;
+}
+
+.banner-heading {
+    color: white;
+    font-family: "Roboto";
+    font-size: 65px;
+    font-weight: 500;
+}
+
+.banner-caption {
+    color: #f5f7fa;
+    font-family: "Roboto";
+    font-size: 24px;
+    font-weight: 300;
+}
+
+.custom-button {
+    color: white;
+    background-color: #3498db;
+    width: 150px;
+    height: 60px;
+    border-width: 0;
+    border-radius: 8px;
+    margin-right: 10px;
+}
+
+.custom-outline-button {
+    color: #3498db;
+    background-color: transparent;
+    width: 150px;
+    height: 60px;
+    border-style: solid;
+    border-width: 1px;
+    border-color: #3498db;
+    border-radius: 8px;
 }

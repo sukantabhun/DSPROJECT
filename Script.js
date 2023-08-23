@@ -1,3 +1,5 @@
+
+
 let temp = true;
 let graphEl = document.getElementById('plot');
 let animateEl = document.getElementById('animate');
@@ -18,3 +20,9 @@ function predictToggle() {
         alert('You clicked on the predict button!');
     }
 }
+
+function jumpToSection(sectionId) {
+    document.getElementById(sectionId).scrollIntoView({ behavior: 'smooth' });
+}
+
+
