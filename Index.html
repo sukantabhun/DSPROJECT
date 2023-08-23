@@ -90,8 +90,7 @@
                 </div>
             </div>
 
-            <div>
-                <div class='pb-5 pr-5 pl-5 mb-5'>
+            <div class="d-flex flex-row justify-content-center p-5"><div class="card-carousal">
                 <div id="varanasiTempleCarousel" class="carousel slide"
                         data-ride="carousel">
                         <ol class="carousel-indicators">
@@ -175,7 +174,7 @@
                                 <span class="sr-only">Next</span>
                             </a>
                         </div>
-                </div>
+            </div>
             </div>
   
 
@@ -189,8 +188,7 @@
                                 <div id="animate" class="loading-spinner">
                                     <i class="fas fa-futbol text-white"></i>
                                 </div>
-                                <p id="animateText" class="text-white">Pridicting</p>
-                                <div id="plot" class="mt-5 d-none  graph-design"></div>
+                                <div id="plot" class="mt-5  graph-design"></div>
                                 <py-script output='plot'>
                                     from matplotlib import pyplot
 
@@ -217,11 +215,6 @@
                                 </py-script>
                             </div>
                         </div>
-                        <center class="mt-5">
-                            <button class='btn btn-color btn-outline-danger'
-                                id="predictBtn"
-                                onclick='predictToggle()'>Predict</button>
-                        </center>
                 </div>
             </div>
 

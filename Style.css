@@ -81,27 +81,6 @@
     background-color: transparent;
     border: none;
 }
-.bg-1{
-    background-image: url('https://wallpaperaccess.com/full/3491893.jpg');
-    background-size: cover;
-    width: 100vw;
-    height: 100vh;
-    text-align: center;
-}
-.bg-2{
-    background-image: url('https://img.olympicchannel.com/images/image/private/t_s_w1340/t_s_16_9_g_auto/f_auto/primary/cfhhzir28lrfmr5lgyxk');
-    background-size: cover;
-    width: 100vw;
-    height: 100vh;
-    text-align: center;
-}
-.bg-3{
-    background-image: url('https://wallpapercave.com/wp/wp3109791.jpg');
-    background-size: cover;
-    height: 100vh;
-    text-align: center;
-    object-fit: cover;
-}
 .predictor-bg{
     background-image: url('./bgImg.jpeg');
     height: 100vh;
@@ -153,3 +132,81 @@
     border-color: #3498db;
     border-radius: 8px;
 }
+.menu-section-heading {
+    color: #183b56;
+    font-family: "Roboto";
+    font-size: 28px;
+    font-weight: 700;
+}
+
+.menu-item-image {
+    border-radius: 16px;
+}
+
+.menu-card-title {
+    color: #3498db;
+    font-family: "Roboto";
+    font-size: 18px;
+    font-weight: 500;
+    margin-top: 24px;
+}
+
+.menu-item-link {
+    color: #3498db;
+    font-family: "Roboto";
+    font-size: 14px;
+    font-weight: 500;
+}
+
+.menu-item-card {
+    border-radius: 16px;
+}
+
+
+.card-carousal {
+    height: 30%;
+    width: 75%; 
+    border-radius: 25px;
+    overflow: hidden;
+    margin: auto;
+}
+
+.carousel-inner {
+    height: 100%; 
+}
+
+.carousel-item {
+    background-size: cover;
+    height: 100%; 
+}
+
+.carousel-control-prev-icon,
+.carousel-control-next-icon {
+
+    color: #3498db;
+    font-size: 30px;
+}
+
+.bg-1{
+    background-image: url('https://wallpaperaccess.com/full/3491893.jpg');
+    background-size:cover;
+    height: 75vh;
+    width: 100%;
+    text-align: center;
+}
+.bg-2{
+    background-image: url('https://img.olympicchannel.com/images/image/private/t_s_w1340/t_s_16_9_g_auto/f_auto/primary/cfhhzir28lrfmr5lgyxk');
+    background-size: cover;
+    width: 100%;
+    height: 75vh;
+    text-align: center;
+}
+.bg-3{
+    background-image: url('https://wallpapercave.com/wp/wp3109791.jpg');
+    background-size: cover;
+    width: 100%;
+    height: 75vh;
+    text-align: center;
+    object-fit: cover;
+}
+
