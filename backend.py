@@ -1,5 +1,5 @@
 import pandas as pd
-       import matplotlib.pyplot as plt
+import matplotlib.pyplot as plt
 import numpy as np
 import math
 df=pd.read_csv('international_matches.csv')
