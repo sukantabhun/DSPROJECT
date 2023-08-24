@@ -139,40 +139,20 @@ if first_con in wc_countries:
 else:
   print("invalid input")
 
-
+############################################################################################################
 
 ## Custom teambuilder
-release=df['Release Clause']
-lister=release.tolist()
-count=0
-for i in range(len(lister)):
-    
-    #if math.isnan(lister[i])
-    if isinstance(lister[i],str):
-        count+=1
-        if lister[i][-1]=='M':
-            M=100000
-            lister[i] = round(float(lister[i][1:len(lister[i])-1])*M)
-        elif lister[i][-1]=='K':
-            K=1000
-            lister[i] = round(float(lister[i][1:len(lister[i])-1])*K)
-        continue
-    lister[i] = 0
 
-indexes = 16709
-non_nan=(indexes-count)
-print("no. of non nan =",count)  
-print("no. of nan =",non_nan)
-mean = sum(lister)/(len(lister)-(indexes-count))
-mean=round(mean,2)
-print(mean)
-for i in range(len(lister)):
-    if lister[i] == 0:
-        lister[i] = round(mean,0)
-        continue
-lister
+import pandas as pd
+import matplotlib.pyplot as plt
+import numpy as np
+import math
+df=pd.read_csv('FIFA22_official_data.csv')
 
-players1=df[['ID','Name','Age','Nationality','Overall','Club','Best Position','Release Clause']]
+# converting release clause into integer values
+players1=df[['Name','Age','Nationality','Overall','Club','Best Position','Release Clause']]
+players1
+
 for i in range(len(players1)):
     release_clause = players1.loc[i, 'Release Clause']
     if isinstance(release_clause, str) and ((release_clause[0]=='€'and release_clause[-1]=='M')or(release_clause[0]=='€'and release_clause[-1]=='K')):
@@ -183,8 +163,53 @@ for i in range(len(players1)):
             K=1000
             players1.loc[i, 'Release Clause'] = round(float(release_clause[1:len(release_clause)-1])*K)
     else:
-        players1.loc[i, 'Release Clause'] = '775757'
+        players1.loc[i, 'Release Clause'] = '775757'        
+players1['Release Clause'] = pd.to_numeric(players1['Release Clause'])
+(players1.sort_values(by='Release Clause',ascending=False)).head(80)
+print(players1)
 
+# all positions list
+play_pos=players1[['Best Position']].drop_duplicates()
+play_pos1=play_pos['Best Position'].tolist()
+print(play_pos1)
+
+#SELECTOR TEAM A
+
+  
+Max_fee=1000000000
+
+#for seeing the ST table
+if 'ST' in play_pos1:
+    for index,rows in players1.iterrows():
+        players1['Release Clause'] = pd.to_numeric(players1['Release Clause'])
+        ST_table= players1[(players1['Best Position']== 'ST')&(players1['Release Clause']<= Max_fee)] 
+else:
+    print('unexpected error')
+print((ST_table.sort_values(by='Overall',ascending=False)).head(10)) 
+
+#for selecting
+Max_fee = 1000000000
+select_player = input("Select the positional player: ")
+# Check if the selected player exists in the players1 dataframe
+if any(players1['Name'] == select_player):
+    player_data = players1[players1['Name'] == select_player]
+    fee_value = int(player_data['Release Clause'].values[0])
+    Max_fee -= fee_value
+
+    # Remove the selected player from players1
+    players1 = players1[players1['Name'] != select_player]
+    # Remove the selected player from ST_table
+    ST_table = ST_table[ST_table['Name'] != select_player]
+    ST_table['Release Clause'] = pd.to_numeric(ST_table['Release Clause'])
+
+    print(f"{select_player} has been removed.")
+    print(f"Updated Max_fee: {Max_fee}")
+else:
+    print(f"{select_player} not found in the data.")
+
+print("Top 10 players in ST_table:")
+print(ST_table.sort_values(by='Overall', ascending=False).head(10))
+print(Max_fee)
 
 
 
