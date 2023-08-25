@@ -560,7 +560,7 @@ print("Top 10 players in CB_table:")
 print(CB_table.sort_values(by='Overall', ascending=False).head(10))
 print(Max_fee)
 
-########################################################################
+############################################################################
 
 #for seeing the LB table
 if 'LB' in play_pos1:
@@ -592,11 +592,76 @@ else:
     print(f"{select_player} not found in the data.")
 
 print("Top 10 players in ST_table:")
-print(ST_table.sort_values(by='Overall', ascending=False).head(10))
+print(LB_table.sort_values(by='Overall', ascending=False).head(10))
 print(Max_fee)
 
+##############################################################################
 
+if 'RB' in play_pos1:
+    for index,rows in players1.iterrows():
+        players1['Release Clause'] = pd.to_numeric(players1['Release Clause'])
+        RB_table= players1[(players1['Best Position']== 'RB')&(players1['Release Clause']<= Max_fee)] 
+else:
+    print('unexpected error')
+print((RB_table.sort_values(by='Overall',ascending=False)).head(10)) 
 
+#for selecting
+Max_fee = 1000000000
+select_player = input("Select the positional player: ")
+# Check if the selected player exists in the players1 dataframe
+if any(players1['Name'] == select_player):
+    player_data = players1[players1['Name'] == select_player]
+    fee_value = int(player_data['Release Clause'].values[0])
+    Max_fee -= fee_value
+
+    # Remove the selected player from players1
+    players1 = players1[players1['Name'] != select_player]
+    # Remove the selected player from ST_table
+    RB_table = RB_table[RB_table['Name'] != select_player]
+    RB_table['Release Clause'] = pd.to_numeric(RB_table['Release Clause'])
+
+    print(f"{select_player} has been removed.")
+    print(f"Updated Max_fee: {Max_fee}")
+else:
+    print(f"{select_player} not found in the data.")
+
+print("Top 10 players in RB_table:")
+print(RB_table.sort_values(by='Overall', ascending=False).head(10))
+print(Max_fee)
+
+#############################################################################
+
+if 'GK' in play_pos1:
+    for index,rows in players1.iterrows():
+        players1['Release Clause'] = pd.to_numeric(players1['Release Clause'])
+        GK_table= players1[(players1['Best Position']== 'GK')&(players1['Release Clause']<= Max_fee)] 
+else:
+    print('unexpected error')
+print((GK_table.sort_values(by='Overall',ascending=False)).head(10)) 
+
+#for selecting
+Max_fee = 1000000000
+select_player = input("Select the positional player: ")
+# Check if the selected player exists in the players1 dataframe
+if any(players1['Name'] == select_player):
+    player_data = players1[players1['Name'] == select_player]
+    fee_value = int(player_data['Release Clause'].values[0])
+    Max_fee -= fee_value
+
+    # Remove the selected player from players1
+    players1 = players1[players1['Name'] != select_player]
+    # Remove the selected player from ST_table
+    GK_table = GK_table[GK_table['Name'] != select_player]
+    GK_table['Release Clause'] = pd.to_numeric(GK_table['Release Clause'])
+
+    print(f"{select_player} has been removed.")
+    print(f"Updated Max_fee: {Max_fee}")
+else:
+    print(f"{select_player} not found in the data.")
+
+print("Top 10 players in GK_table:")
+print(GK_table.sort_values(by='Overall', ascending=False).head(10))
+print(Max_fee)
 
 
 
